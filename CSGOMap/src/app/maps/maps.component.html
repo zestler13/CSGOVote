@@ -1,0 +1,30 @@
+<h2>Maps Available </h2>
+
+
+
+
+<table>
+    <tr>
+        <td> Maps</td>
+        <td>Votes</td>
+    </tr>
+    <tr>
+        <td>
+            <ul class="maps">
+                <li *ngFor="let mapName of maps" [class.selected]="mapName === selectedMap" (click)="onSelect(mapName)">
+                    <span class="badge"> # </span> {{mapName}}
+                </li>
+            </ul>
+        </td>
+        <td>
+            <ul class="maps"></ul>
+        </td>
+    </tr>
+
+</table>
+<div *ngIf="selectedMap">
+    <h2> You chosed </h2>
+    <div> {{selectedMap | uppercase}}</div>
+</div>
+
+<button (click)="save()">save</button>
