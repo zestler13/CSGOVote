@@ -19,12 +19,14 @@ server.listen(8080, ( )  =>  {
   console.log ( 'Serveur démarré!' ) 
 });
 
+server.route('/api/maps').post((req, res) => {
+  res.send(201, req.body)
+});
 
 
-
-server.route('/api/maps').get((req, res) => {
-  console.log('je reçois qlq chose sur serveur.route');
-})
+//server.route('/api/maps').get((req, res) => {
+ // console.log('je reçois qlq chose sur serveur.route');
+//})
 
 
 
@@ -41,7 +43,7 @@ async function extractMaps(path) {
 }	
 
 
-function recaveVote(){
+function receiveVote(){
     console.log("ceci est un test dasn recaveVote");
     // dasn le cas ou l'utilisateur a bien selectionner une carte
 /*     if (this.selectedMap != null) {
