@@ -2,7 +2,6 @@
 var express = require('express');//si comme si j'import
 const fs = require('fs').promises;
 var router = express.Router();
-module.exports = router;
 
 //Instantiate server autrement je declare serveur de type express
 var server = express();
@@ -15,11 +14,19 @@ server.get('/api/maps', function (req, res) {
 });
 
 
-server.post('/api/maps',recaveVote());
-
-
 //launch server 
-server.listen(8080);
+server.listen(8080, ( )  =>  { 
+  console.log ( 'Serveur démarré!' ) 
+});
+
+
+
+
+server.route('/api/maps').get((req, res) => {
+  console.log('je reçois qlq chose sur serveur.route');
+})
+
+
 
 async function extractMaps(path) {
     const files = await fs.readdir(path);

@@ -37,7 +37,7 @@ export class MapsComponent implements OnInit {
 
   // doit  envoyer le vote
   save(): void {
-   console.log('ceci est envoie de vote' + this.mapService.sendVote(this.selectedMap));
+   console.log('jenvoie  ' + this.mapService.sendVote(this.selectedMap));
     // ensuite
     this.selectedMap = null;
   }

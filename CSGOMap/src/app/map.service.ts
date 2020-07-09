@@ -28,6 +28,7 @@ export class MapService {
 
 
   sendVote(selectedMap: string): Observable<MapInterface>  {
+    console.log('je vais envoyé ' + selectedMap );
     return this.http.post<MapInterface>(this.mapsUrl, selectedMap, this.httpOptions).pipe(
       catchError(this.handleError<MapInterface>('ERRORSendVote'))
     );

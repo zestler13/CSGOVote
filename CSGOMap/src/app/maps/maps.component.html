@@ -1,30 +1,29 @@
-<h2>Maps Available </h2>
+<h2> Cartes disponibles : </h2>
+
+<p style="font-size:20px"> Veuillez choisir la carte que vous préférez, puis appuyez sur le bouton Enregistrer :</p>
+
+<ul class="maps">
+    <li *ngFor="let mapName of maps" [class.selected]="mapName === selectedMap" (click)="onSelect(mapName)">
+        <span class="badge"> # </span> {{mapName}}
+    </li>
+</ul>
 
 
+<div *ngIf="selectedMap">
+    <h2> Vous avez choisi : {{selectedMap | uppercase}}</h2>
+</div>
 
+<button (click)="save()">Enregistrer</button>
 
 <table>
     <tr>
-        <td> Maps</td>
-        <td>Votes</td>
+        <td> Cartes</td>
+        <td> Votes</td>
     </tr>
     <tr>
-        <td>
-            <ul class="maps">
-                <li *ngFor="let mapName of maps" [class.selected]="mapName === selectedMap" (click)="onSelect(mapName)">
-                    <span class="badge"> # </span> {{mapName}}
-                </li>
-            </ul>
-        </td>
-        <td>
-            <ul class="maps"></ul>
-        </td>
+        <!--ici sera le résultat du vote -->
+        <td> </td>
+        <td> </td>
     </tr>
 
 </table>
-<div *ngIf="selectedMap">
-    <h2> You chosed </h2>
-    <div> {{selectedMap | uppercase}}</div>
-</div>
-
-<button (click)="save()">save</button>
